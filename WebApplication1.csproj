@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20180725014417_init1.cs" />
+    <Compile Remove="Migrations\20180725014417_init1.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="AutoRepair.ldf" />
+    <None Remove="AutoRepair.mdf" />
+    <None Remove="SQLQuery1.sql" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.1.1" />
+  </ItemGroup>
+
+</Project>
