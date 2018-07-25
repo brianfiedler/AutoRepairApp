@@ -116,14 +116,40 @@ namespace WebApplication1.Controllers
 
         // PUT api/values/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public void Put(int id, [FromBody] Vehicle updatedVehicle)
         {
+
+            
+            using (var context = new AutoRepairContext())
+            {
+                //get existing vehicle by id
+                var existingVehicle = context.Vehicles.FirstOrDefault(a=>a.Identifier == id);
+
+                //update existing vehicle from the db with the data passd into the api
+                existingVehicle.Year = updatedVehicle.Year;
+                existingVehicle.Make = updatedVehicle.Make;
+                existingVehicle.Model = updatedVehicle.Model;
+
+                //don't forget to save chagnes
+                context.Entry(existingVehicle).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+                context.SaveChanges();
+            }
         }
 
         // DELETE api/values/5
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
+            using (var context = new AutoRepairContext())
+            {
+                //get existing vehicle by id
+                var existingVehicle = context.Vehicles.FirstOrDefault(a => a.Identifier == id);
+
+
+                //don't forget to save chagnes
+                context.Entry(existingVehicle).State = Microsoft.EntityFrameworkCore.EntityState.Deleted;
+                context.SaveChanges();
+            }
         }
     }
 }
