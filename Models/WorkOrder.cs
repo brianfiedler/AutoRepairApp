@@ -14,6 +14,12 @@ namespace WebApplication1.Controllers
         public string Description { get; set; }
         public DateTime CompletedOn { get; set; }
         public DateTime EstimatedCompletionDate { get; set; }
+        public int AutomobileId { get; set; }
+        public virtual Automobile Automobile { get; set; }
+        public int MotorcycleId { get; set; }
+        public virtual Motorcycle Motorcycle { get; set; }
+        public int CustomerId { get; set; }
+        public virtual Customer Customer { get; set; }
     }
 
 
