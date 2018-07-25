@@ -21,6 +21,7 @@ namespace WebApplication1.Controllers
             return Ok(_context.Automobiles.FirstOrDefault(a=>a.Id == id));
         }
 
+
         // GET api/search
         [HttpGet]
         public ActionResult<List<Automobile>> GetCollection(SearchFilter searchCriteria)
