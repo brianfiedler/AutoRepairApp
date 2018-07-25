@@ -10,8 +10,7 @@ namespace WebApplication1.Controllers
     
     public class Vehicle 
     {
-        [Key]
-        public int Identifier { get; set; }
+
         public int NumberOfAxels { get; set; }
         public int Weight { get; set; }
         public string Make { get; set; }

@@ -8,16 +8,10 @@ using Microsoft.AspNetCore.Mvc;
 namespace WebApplication1.Controllers
 {
 
-    public class Automobile 
+    public class Automobile : Vehicle
     {
         [Key]
-        public int Identifier { get; set; }
-        public int NumberOfAxels { get; set; }
-        public int Weight { get; set; }
-        public string Make { get; set; }
-        public string Model { get; set; }
-        public int NumberOfPassengers { get; set; }
-        public int Year { get; set; }
+        public int Id { get; set; }
         public int RideHigh { get; set; }
         public string Color { get; set; }
     }
