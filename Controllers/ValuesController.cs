@@ -48,7 +48,6 @@ namespace WebApplication1.Controllers
             myVehicles.Color = "black";
             myVehicles.RideHigh = 6;
                
-
             return myVehicles;
         }
 
