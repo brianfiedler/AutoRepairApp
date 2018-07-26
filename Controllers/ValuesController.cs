@@ -97,20 +97,20 @@ namespace WebApplication1.Controllers
         public void Post()
         {
 
-            Vehicle myFirstVehicle = new Vehicle();
-            myFirstVehicle.Make = "Kia";
-            myFirstVehicle.Model = "Optima";
-            myFirstVehicle.Year = 2015;
-            myFirstVehicle.NumberOfAxels = 2;
-            myFirstVehicle.NumberOfPassengers = 5;
-            myFirstVehicle.Weight = 50;
+            //Vehicle myFirstVehicle = new Vehicle();
+            //myFirstVehicle.Make = "Kia";
+            //myFirstVehicle.Model = "Optima";
+            //myFirstVehicle.Year = 2015;
+            //myFirstVehicle.NumberOfAxels = 2;
+            //myFirstVehicle.NumberOfPassengers = 5;
+            //myFirstVehicle.Weight = 50;
 
-            using (var context = new AutoRepairContext())
-            {
-                context.Vehicles.Add(myFirstVehicle);
-                context.Entry(myFirstVehicle).State = Microsoft.EntityFrameworkCore.EntityState.Added;
-                context.SaveChanges();
-            }
+            //using (var context = new AutoRepairContext())
+            //{
+            //    context.Vehicles.Add(myFirstVehicle);
+            //    context.Entry(myFirstVehicle).State = Microsoft.EntityFrameworkCore.EntityState.Added;
+            //    context.SaveChanges();
+            //}
         }
 
         // PUT api/values/5
@@ -122,16 +122,16 @@ namespace WebApplication1.Controllers
             using (var context = new AutoRepairContext())
             {
                 //get existing vehicle by id
-                var existingVehicle = context.Vehicles.FirstOrDefault(a=>a.Identifier == id);
+                //var existingVehicle = context.Vehicles.FirstOrDefault(a=>a.Identifier == id);
 
-                //update existing vehicle from the db with the data passd into the api
-                existingVehicle.Year = updatedVehicle.Year;
-                existingVehicle.Make = updatedVehicle.Make;
-                existingVehicle.Model = updatedVehicle.Model;
+                ////update existing vehicle from the db with the data passd into the api
+                //existingVehicle.Year = updatedVehicle.Year;
+                //existingVehicle.Make = updatedVehicle.Make;
+                //existingVehicle.Model = updatedVehicle.Model;
 
-                //don't forget to save chagnes
-                context.Entry(existingVehicle).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
-                context.SaveChanges();
+                ////don't forget to save chagnes
+                //context.Entry(existingVehicle).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+                //context.SaveChanges();
             }
         }
 
@@ -141,13 +141,13 @@ namespace WebApplication1.Controllers
         {
             using (var context = new AutoRepairContext())
             {
-                //get existing vehicle by id
-                var existingVehicle = context.Vehicles.FirstOrDefault(a => a.Identifier == id);
+                ////get existing vehicle by id
+                //var existingVehicle = context.Vehicles.FirstOrDefault(a => a.Identifier == id);
 
 
-                //don't forget to save chagnes
-                context.Entry(existingVehicle).State = Microsoft.EntityFrameworkCore.EntityState.Deleted;
-                context.SaveChanges();
+                ////don't forget to save chagnes
+                //context.Entry(existingVehicle).State = Microsoft.EntityFrameworkCore.EntityState.Deleted;
+                //context.SaveChanges();
             }
         }
     }

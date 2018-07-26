@@ -16,7 +16,7 @@ namespace WebApplication1.DataAccess
             
         }
 
-        public virtual DbSet<Vehicle> Vehicles { get; set; }
+        //public virtual DbSet<Vehicle> Vehicles { get; set; }
         public virtual DbSet<Automobile> Automobiles { get; set; }
         public virtual DbSet<Customer> Customers { get; set; }
         public virtual DbSet<WorkOrder> WorkOrders { get; set; }
@@ -34,6 +34,7 @@ namespace WebApplication1.DataAccess
             //modelBuilder.Entity<Customer>().HasKey(c => c.Id);
             //modelBuilder.Entity<Motorcycle>().HasKey(c => c.Id);
             //modelBuilder.Entity<WorkOrder>().HasKey(c => c.Id);
+            modelBuilder.Ignore<Vehicle>();
             base.OnModelCreating(modelBuilder);
         }
     }
