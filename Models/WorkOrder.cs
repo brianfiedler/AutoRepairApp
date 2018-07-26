@@ -1,5 +1,7 @@
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using WebApplication1.Models;
 
 namespace WebApplication1.Controllers
 {
@@ -20,6 +22,7 @@ namespace WebApplication1.Controllers
         public virtual Motorcycle Motorcycle { get; set; }
         public int CustomerId { get; set; }
         public virtual Customer Customer { get; set; }
+        public virtual List<WorkOrderItem> WorkOrderItems { get;set;}
     }
 
 
