@@ -60,6 +60,8 @@ namespace WebApplication1.Controllers
         public ActionResult<Automobile> Post([FromBody]Automobile auto)
         {
             //check to make sure this automobile doesn't already exist in the database
+
+
             var isExistingAutomobile = _context.Automobiles.Any(a => a.Id == auto.Id);
 
             if(isExistingAutomobile)
