@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WebApplication1.DataAccess;
 
 namespace WebApplication1.Migrations
 {
     [DbContext(typeof(AutoRepairContext))]
-    partial class AutoRepairContextModelSnapshot : ModelSnapshot
+    [Migration("20180725163815_navigationProprties")]
+    partial class navigationProprties
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -81,23 +83,9 @@ namespace WebApplication1.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Color");
-
                     b.Property<string>("EngineSize");
 
                     b.Property<bool>("IsAHarley");
-
-                    b.Property<string>("Make");
-
-                    b.Property<string>("Model");
-
-                    b.Property<int>("NumberOfAxels");
-
-                    b.Property<int>("NumberOfPassengers");
-
-                    b.Property<int>("Weight");
-
-                    b.Property<int>("Year");
 
                     b.HasKey("Id");
 
@@ -139,27 +127,6 @@ namespace WebApplication1.Migrations
                     b.ToTable("WorkOrders");
                 });
 
-            modelBuilder.Entity("WebApplication1.Models.WorkOrderItem", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<DateTime>("ApprovedOn");
-
-                    b.Property<double>("Cost");
-
-                    b.Property<string>("Description");
-
-                    b.Property<int?>("WorkOrderId");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("WorkOrderId");
-
-                    b.ToTable("WorkOrderItem");
-                });
-
             modelBuilder.Entity("WebApplication1.Controllers.WorkOrder", b =>
                 {
                     b.HasOne("WebApplication1.Controllers.Automobile", "Automobile")
@@ -176,13 +143,6 @@ namespace WebApplication1.Migrations
                         .WithMany()
                         .HasForeignKey("MotorcycleId")
                         .OnDelete(DeleteBehavior.Cascade);
-                });
-
-            modelBuilder.Entity("WebApplication1.Models.WorkOrderItem", b =>
-                {
-                    b.HasOne("WebApplication1.Controllers.WorkOrder")
-                        .WithMany("WorkOrderItems")
-                        .HasForeignKey("WorkOrderId");
                 });
 #pragma warning restore 612, 618
         }

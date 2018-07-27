@@ -1,0 +1,24 @@
+﻿GitHUB
+BJ's GiyHub Username : Skybri0311
+Dads Gihub Username : brianfiedler
+
+Repo address : https://github.com/brianfiedler/AutoRepairApp.git
+
+CREATE A NEW BRANCH
+open command prompt and navigate to the project
+example: here is what I use for my machine...
+	cd c:\Development\Git\WebApplication1 - Copy
+
+Always check the status of the branch
+1. git status
+
+check to see what branch you are on
+2. git branch
+
+if you are on master or develop, add and commit any changes
+3. git add .
+4. git commit -m "note on what you are changing"
+
+create new branch
+5. git checkout -b myNewBranchName
+

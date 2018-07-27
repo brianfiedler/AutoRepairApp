@@ -8,12 +8,13 @@ using Microsoft.AspNetCore.Mvc;
 namespace WebApplication1.Controllers
 {
 
-    public class Motorcycle 
+    public class Motorcycle : Vehicle 
     {
         [Key]
         public int Id { get; set; }
         public string EngineSize { get; set; }
         public bool IsAHarley { get; set; }
+        public string Color { get; set; }
     }
 
 
