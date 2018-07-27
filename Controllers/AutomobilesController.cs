@@ -50,7 +50,7 @@ namespace WebApplication1.Controllers
             //color
             if (!string.IsNullOrEmpty(searchCriteria.Color))
             {
-                foundAutomobiles = foundAutomobiles.Where(a => a.Year == searchCriteria.Year);
+                foundAutomobiles = foundAutomobiles.Where(a => a.Color == searchCriteria.Color);
             }
 
             return Ok(foundAutomobiles.ToList());
@@ -60,6 +60,8 @@ namespace WebApplication1.Controllers
         public ActionResult<Automobile> Post([FromBody]Automobile auto)
         {
             //check to make sure this automobile doesn't already exist in the database
+
+
             var isExistingAutomobile = _context.Automobiles.Any(a => a.Id == auto.Id);
 
             if(isExistingAutomobile)
@@ -89,6 +91,7 @@ namespace WebApplication1.Controllers
 
             //map properties to be updated
             existingAutomobile.Make = auto.Make;
+            existingAutomobile.Model = auto.Model;
             existingAutomobile.NumberOfAxels = auto.NumberOfAxels;
             existingAutomobile.NumberOfPassengers = auto.NumberOfPassengers;
             existingAutomobile.RideHigh = auto.RideHigh;
