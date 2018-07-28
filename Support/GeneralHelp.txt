@@ -22,3 +22,6 @@ if you are on master or develop, add and commit any changes
 create new branch
 5. git checkout -b myNewBranchName
 
+to add migration
+1. add-migration (location)
+2. update-database
