@@ -302,6 +302,57 @@ namespace WebApplication1.Migrations
                     b.ToTable("VehicleTypes");
                 });
 
+            modelBuilder.Entity("WebApplication1.Models.Dragcar", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Dragcar");
+                });
+
+            modelBuilder.Entity("WebApplication1.Models.Plan", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Description");
+
+                    b.Property<string>("Name");
+
+                    b.Property<bool>("NeedsRefinish");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Plans");
+                });
+
+            modelBuilder.Entity("WebApplication1.Models.Tuner", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<bool>("HasAirbags");
+
+                    b.Property<bool>("HasBodykit");
+
+                    b.Property<bool>("HasSupercharger");
+
+                    b.Property<bool>("Hasturbo");
+
+                    b.Property<string>("PriorBuildShop");
+
+                    b.Property<string>("RacingTeam");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Tuners");
+                });
+
             modelBuilder.Entity("WebApplication1.Models.WorkOrderItem", b =>
                 {
                     b.Property<int>("Id")

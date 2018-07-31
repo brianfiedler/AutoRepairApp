@@ -1,9 +1,11 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.JsonPatch.Operations;
+using Microsoft.EntityFrameworkCore;
 
 using System.Data.Common;
 using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using WebApplication1.Controllers;
@@ -31,8 +33,13 @@ namespace WebApplication1.DataAccess
         public virtual DbSet<VehicleType> VehicleTypes { get; set; }
         public virtual DbSet<WorkOrderItem> WorkOrderItems { get; set; }
         public virtual DbSet<WorkOrder> WorkOrders { get; set; }
-        
+        public virtual DbSet<Motorcycle> Motorcycles { get; set; }
+        public virtual DbSet<Plan> Plans  { get; set; }
+        public virtual DbSet<Tuner> Tuners { get; set; }
+        public virtual DbSet<Dragcar> Dragcars { get; set; }
+        public virtual DbSet<PerformanceAuto> PerformanceAutos { get; set; }
 
+    
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

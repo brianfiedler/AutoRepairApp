@@ -13,5 +13,7 @@ namespace WebApplication1.Models
         public string Model { get; set; }
         public bool IsHarley { get; set; }
         public int EngineSize { get; set; }
+        public string SearchText { get; set; }
+        public int SearchNumber { get; set; }
     }
 }
