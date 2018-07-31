@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2042
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApplication1", "WebApplication1.csproj", "{5245797D-8582-49B5-848D-ADB27E2102AC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutoRepsir.Api", "AutoRepsir.Api.csproj", "{5245797D-8582-49B5-848D-ADB27E2102AC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

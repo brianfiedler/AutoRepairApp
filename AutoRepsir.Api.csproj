@@ -1,0 +1,55 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20180725014417_init1.cs" />
+    <Compile Remove="Migrations\20180725014417_init1.Designer.cs" />
+    <Compile Remove="Migrations\20180725150157_updatedVehiclesToNotBeADbTable.cs" />
+    <Compile Remove="Migrations\20180725150157_updatedVehiclesToNotBeADbTable.Designer.cs" />
+    <Compile Remove="Migrations\20180728181136_bigModelChange.cs" />
+    <Compile Remove="Migrations\20180728181136_bigModelChange.Designer.cs" />
+    <Compile Remove="Migrations\20180728182313_bigModelChange1.cs" />
+    <Compile Remove="Migrations\20180728182313_bigModelChange1.Designer.cs" />
+    <Compile Remove="Migrations\20180728182841_bigModelChange12.cs" />
+    <Compile Remove="Migrations\20180728182841_bigModelChange12.Designer.cs" />
+    <Compile Remove="Migrations\20180728183055_modelChanges.cs" />
+    <Compile Remove="Migrations\20180728183055_modelChanges.Designer.cs" />
+    <Compile Remove="Migrations\20180728183719_modelChanges1.cs" />
+    <Compile Remove="Migrations\20180728183719_modelChanges1.Designer.cs" />
+    <Compile Remove="Migrations\20180728183851_modelChanges12.cs" />
+    <Compile Remove="Migrations\20180728183851_modelChanges12.Designer.cs" />
+    <Compile Remove="Migrations\20180728184008_modelChanges123.cs" />
+    <Compile Remove="Migrations\20180728184008_modelChanges123.Designer.cs" />
+    <Compile Remove="Migrations\20180728184841_modelChanges.cs" />
+    <Compile Remove="Migrations\20180728184841_modelChanges.Designer.cs" />
+    <Compile Remove="Migrations\20180728185451_modelChanges.cs" />
+    <Compile Remove="Migrations\20180728185451_modelChanges.Designer.cs" />
+    <Compile Remove="Migrations\20180728190802_modelChanges.cs" />
+    <Compile Remove="Migrations\20180728190802_modelChanges.Designer.cs" />
+    <Compile Remove="Migrations\20180730235558_updateModel.cs" />
+    <Compile Remove="Migrations\20180730235558_updateModel.Designer.cs" />
+    <Compile Remove="Migrations\20180731001145_updateModel.cs" />
+    <Compile Remove="Migrations\20180731001145_updateModel.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="AutoRepair.ldf" />
+    <None Remove="AutoRepair.mdf" />
+    <None Remove="SQLQuery1.sql" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.1.1" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.1" />
+  </ItemGroup>
+
+</Project>
