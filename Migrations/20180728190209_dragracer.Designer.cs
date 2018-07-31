@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WebApplication1.DataAccess;
 
 namespace WebApplication1.Migrations
 {
     [DbContext(typeof(AutoRepairContext))]
-    partial class AutoRepairContextModelSnapshot : ModelSnapshot
+    [Migration("20180728190209_dragracer")]
+    partial class dragracer
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -137,17 +139,6 @@ namespace WebApplication1.Migrations
                     b.HasIndex("MotorcycleId");
 
                     b.ToTable("WorkOrders");
-                });
-
-            modelBuilder.Entity("WebApplication1.Models.Dragcar", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Dragcar");
                 });
 
             modelBuilder.Entity("WebApplication1.Models.Plan", b =>
