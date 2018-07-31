@@ -22,3 +22,10 @@ if you are on master or develop, add and commit any changes
 create new branch
 5. git checkout -b myNewBranchName
 
+
+
+ADDING A NEW MIGRATION
+1. Open Package Manager Console
+2. add-migration newMigrationName
+3. update-database
+
