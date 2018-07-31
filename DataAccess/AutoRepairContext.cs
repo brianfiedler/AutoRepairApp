@@ -25,6 +25,11 @@ namespace WebApplication1.DataAccess
         public virtual DbSet<WorkOrder> WorkOrders { get; set; }
         public virtual DbSet<Motorcycle> Motorcycles { get; set; }
         public virtual DbSet<Plan> Plans  { get; set; }
+        public virtual DbSet<Tuner> Tuners { get; set; }
+        public virtual DbSet<Dragcar> Dragcars { get; set; }
+        public virtual DbSet<PerformanceAuto> PerformanceAutos { get; set; }
+
+    
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -38,6 +43,8 @@ namespace WebApplication1.DataAccess
             //modelBuilder.Entity<Customer>().HasKey(c => c.Id);
             //modelBuilder.Entity<Motorcycle>().HasKey(c => c.Id);
             //modelBuilder.Entity<WorkOrder>().HasKey(c => c.Id);
+            //modleBuilder.Entity<Plan>().HasKey(c => c.Id);
+            //modleBuilder.Entity<Tuner>().HasKey(c => c.Id);
             modelBuilder.Ignore<Vehicle>();
             base.OnModelCreating(modelBuilder);
         }
