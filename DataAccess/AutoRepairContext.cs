@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.JsonPatch.Operations;
 using Microsoft.EntityFrameworkCore;
+
+using System.Data.Common;
 using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
@@ -20,8 +22,16 @@ namespace WebApplication1.DataAccess
         }
 
         //public virtual DbSet<Vehicle> Vehicles { get; set; }
-        public virtual DbSet<Automobile> Automobiles { get; set; }
+
         public virtual DbSet<Customer> Customers { get; set; }
+        public virtual DbSet<Employee> Employees { get; set; }
+        public virtual DbSet<Facility> Facilities { get; set; }
+        public virtual DbSet<Insurance> Insurance { get; set; }
+        public virtual DbSet<RepairGroup> RepairGroups { get; set; }
+        public virtual DbSet<Status> Status { get; set; }
+        public virtual DbSet<Vehicle> Vehicles { get; set; }
+        public virtual DbSet<VehicleType> VehicleTypes { get; set; }
+        public virtual DbSet<WorkOrderItem> WorkOrderItems { get; set; }
         public virtual DbSet<WorkOrder> WorkOrders { get; set; }
         public virtual DbSet<Motorcycle> Motorcycles { get; set; }
         public virtual DbSet<Plan> Plans  { get; set; }
@@ -38,14 +48,36 @@ namespace WebApplication1.DataAccess
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+           // modelBuilder.Entity<WorkOrder>().HasOne(a=>a.Status).WithOne(p => p.WorkOrder).OnDelete(DeleteBehavior.Delete);
             //modelBuilder.Entity<Vehicle>().HasKey(c => c.Identifier);
             //modelBuilder.Entity<Automobile>().HasKey(c => c.Id);
             //modelBuilder.Entity<Customer>().HasKey(c => c.Id);
             //modelBuilder.Entity<Motorcycle>().HasKey(c => c.Id);
             //modelBuilder.Entity<WorkOrder>().HasKey(c => c.Id);
-            //modleBuilder.Entity<Plan>().HasKey(c => c.Id);
-            //modleBuilder.Entity<Tuner>().HasKey(c => c.Id);
-            modelBuilder.Ignore<Vehicle>();
+            var cascadeFKs = modelBuilder.Model.GetEntityTypes("Status")
+             .SelectMany(t => t.GetForeignKeys())
+             .Where(fk => !fk.IsOwnership && fk.DeleteBehavior == DeleteBehavior.Cascade);
+
+            foreach (var fk in cascadeFKs)
+                fk.DeleteBehavior = DeleteBehavior.Restrict;
+
+            var cascadeFKsWorkOrder = modelBuilder.Model.GetEntityTypes("WorkOrder")
+                 .SelectMany(t => t.GetForeignKeys())
+                 .Where(fk => !fk.IsOwnership && fk.DeleteBehavior == DeleteBehavior.Cascade);
+
+            foreach (var fk in cascadeFKsWorkOrder)
+                fk.DeleteBehavior = DeleteBehavior.Restrict;
+
+            var cascadeFKsWorkOrderItem = modelBuilder.Model.GetEntityTypes("WorkOrderItem")
+                 .SelectMany(t => t.GetForeignKeys())
+                 .Where(fk => !fk.IsOwnership && fk.DeleteBehavior == DeleteBehavior.Cascade);
+
+            foreach (var fk in cascadeFKsWorkOrderItem)
+                fk.DeleteBehavior = DeleteBehavior.Restrict;
+
+
+            modelBuilder.Ignore<Automobile>();
+            modelBuilder.Ignore<Motorcycle>();
             base.OnModelCreating(modelBuilder);
         }
     }
