@@ -13,5 +13,6 @@ namespace WebApplication1.Models
         public int StatusId { get; set; }
         public virtual Status Status { get; set; }
         public string Title { get; set; }
+        public String Location { get; set; }
     }
 }
